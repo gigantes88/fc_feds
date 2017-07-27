@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+<title>Bootstrap Grid</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  padding: 1%;
+  list-style: none;
+}
+[class|="col"] {
+  background-color: aliceblue;
+  box-sizing: border-box;
+  border: 1px solid peachpuff;
+  padding: 1% 1%;
+  color: slategray;
+}
+.container-fluid {
+  background-color: aliceblue;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<!-- container-fluid 시작 -->
+<div class="container-fluid">
+  
+  <!-- 1 row 시작 -->
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="list-inline text-right">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+      </ul>
+    </div>
+  </div>
+  <!-- 1 row 종료 -->
+
+  <!-- 2 row 시작 -->
+  <div class="row">
+    <div class="col-md-2">
+      <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+      </ul>
+    </div>
+
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-12">main content</div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 col-md-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus minus porro, voluptates laborum vitae, excepturi, alias quasi nostrum provident quis distinctio officia cumque aliquid numquam asperiores ullam nesciunt optio? Assumenda?</div>
+        <div class="col-sm-6 col-md-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus minus porro, voluptates laborum vitae, excepturi, alias quasi nostrum provident quis distinctio officia cumque aliquid numquam asperiores ullam nesciunt optio? Assumenda?</div>
+        <div class="col-sm-6 col-md-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus minus porro, voluptates laborum vitae, excepturi, alias quasi nostrum provident quis distinctio officia cumque aliquid numquam asperiores ullam nesciunt optio? Assumenda?</div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, non. Nesciunt atque modi laborum voluptas quidem, tenetur. Beatae nam itaque debitis blanditiis ullam doloremque porro, deleniti, dicta voluptate distinctio nulla!</div>
+        <div class="col-sm-6 col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quis beatae veniam labore harum ducimus sit, nesciunt doloremque commodi sequi, ut consectetur magni dolorem molestias dolores ex, facere dolore et!</div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4 col-md-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, perspiciatis. Dolore necessitatibus laboriosam sit ipsa nesciunt magni id nobis dignissimos autem quidem, tenetur! Dolor, aut, obcaecati facere esse aperiam corrupti.</div>
+        <div class="col-sm-8 col-md-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus libero sapiente aliquid consequatur accusantium, perspiciatis, reprehenderit possimus minus totam asperiores dolores ut dignissimos, ullam incidunt temporibus nam dicta error eaque.</div>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <ul>
+        <li>aside</li>
+        <li>aside</li>
+        <li>aside</li>
+      </ul>
+    </div>
+  </div>
+  <!-- 2 row 종료 -->
+
+  <!-- 3 row 시작 -->
+  <div class="row">
+    <div class="col-md-12">
+      footer
+    </div>
+  </div>
+  <!-- 3 row 종료 -->
+  
+</div>
+<!-- container-fluid 종료 -->
+
+</body>
+</html>
