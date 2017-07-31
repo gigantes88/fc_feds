@@ -1,0 +1,19 @@
+{
+  "name": "javascript_prac",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "eslint": "^4.3.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
