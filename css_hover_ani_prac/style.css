@@ -1,0 +1,13 @@
+/* reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { color: #58666e; -webkit-font-smoothing: antialiased; -webkit-text-size-adjus: 100%; }
+li { list-style: none; }
+a { text-decoration: none; color: #333; }
+.clr-fix::after { clear: both; content: ''; display: block; }
+::-webkit-input-placeholder { color: #aaa; }
+
+.wrap { text-align: center; position: relative; }
+.wrap h1 { padding-bottom: 20px; }
+.frame { width: 400px; height: 600px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, 20%);}
+.imgFrame { width: 400px; height: 400px; background: black url(sample.jpg) no-repeat -100px 0px; background-size: cover; }
+.imgFrame:hover { width: 400px; height: 400px; display: block; }
