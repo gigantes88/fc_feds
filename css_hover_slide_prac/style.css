@@ -1,0 +1,48 @@
+/* reset */
+*, img, h2 { margin: 0; padding: 0; box-sizing: border-box; }
+body { color: #58666e; -webkit-font-smoothing: antialiased; -webkit-text-size-adjus: 100%; }
+li { list-style: none; }
+a { text-decoration: none; color: #333; }
+.clr-fix::after { clear: both; content: ''; display: block; }
+
+/* layout */
+.wrap { text-align: center; }
+.wrap h1 { padding: 50px; }
+
+/********** 
+ * 
+ * 마우스오버 시 슬라이드 업
+ * 
+ **********/
+ 
+/* 가운데가 뚫린 가로세로 400px 이미지 프레임 */
+.imgFrame { 
+  display: inline-block; 
+  width:400px; 
+  height: 400px; 
+  overflow: hidden;
+  cursor: pointer; 
+}
+
+/* 프레임 뒤에 있는 세로로 긴 콘텐츠 블럭 */
+.imgFrame .imgContents {
+  transition: 1s;
+}
+/* 마우스 오버시 위로 슬라이드업 */
+.imgFrame .imgContents:hover {  
+  transform: translateY(-50%); 
+  transition: 1s; 
+}
+
+/* 콘텐츠 */
+.imgFrame img { 
+  width: 400px; 
+  height: 400px; 
+}
+.imgFrame h2 { 
+  width: 400px; 
+  height: 400px; 
+  line-height: 400px;
+  background: black; 
+  color: white; 
+}
