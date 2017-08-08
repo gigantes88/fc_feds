@@ -5,3 +5,20 @@
 
 // 14. var person = { 'my-name': 'Lee' }; 일 때, my-name 프로퍼티의 값을 'Kim'으로 변경하고 console.log()를 사용하여 출력하는 코드를 작성하라.
 
+
+var value = 1;
+
+var obj = {
+  value: 100,
+  foo: function() {
+    console.log("foo's this: ",  this);  // obj
+    console.log("foo's this.value: ",  this.value); // 100 
+    function bar() {
+      console.log("bar's this: ",  this); // window
+      console.log("bar's this.value: ", this.value); // 1
+    }
+    bar();
+  }
+};
+
+obj.foo();
