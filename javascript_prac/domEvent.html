@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<style>
+  #square {
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+  }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<!-- 문제 1번 시작 -->
+<h2>색바꾸기</h2>
+<div id="square"></div>
+<script>
+// vanila JS
+(function () {
+  // id가 square인 div 탐색
+  var mouse = document.getElementById('square');
+  
+  // 마우스 오버할 때
+  mouse.addEventListener('mouseover', function() {
+    this.style.backgroundColor = 'springgreen';
+  });
+
+  // 마우스 아웃할 때
+  mouse.addEventListener('mouseout', function() {
+    this.style.backgroundColor = 'skyblue';
+  });
+})();
+
+// jQuery
+$('#square').hover(function(){  // #square에 마우스가 오버되면
+  $(this).css('background', 'springgreen'); // css를 springgreen 색으로 바꿔준다.
+}, function(){
+  $(this).css('background', 'skyblue') // 마우스아웃이 되면 css를 원래색인 skyblue로 바꿔준다.
+}); 
+</script>
+<!-- 문제 1번 종료 -->
+
+<!-- 문제 2번 시작 -->
+<h2>정답 오답</h2>
+<input type="text" value="1" id="input1">
+<span>+</span>
+<input type="text" value="2" id="input2">
+<span>=</span>
+<input type="text" value="3" id="answer">
+<input type="button" value="확인" id="confirm">
+<script>
+// vanila JS
+(function (){
+  // button의 id 값 찾기
+  var confirm = document.getElementById('confirm');
+  
+  // 버튼 클릭시 이벤트
+  confirm.addEventListener('click', function() {
+    // 각 input 요소 찾기
+    var input1 = document.getElementById('input1').value * 1; // string으로 반환된 value 값을 * 1을 해서 number로 변환한다.
+    var input2 = document.getElementById('input2').value * 1;
+    var answer = document.getElementById('answer').value * 1;
+
+    // input1과 input2를 더해서 값을 검사해서 맞으면 정답 아니면 오답이라고 alert을 띄우기
+    alert ((input1 + input2 === answer) ? ‘정답’ : ‘오답‘);
+  });
+})();
+
+// jQuery
+// #confirm에 클릭 이벤트를 준다.
+$('#confirm').on('click', function(){
+  // 각 input 요소의 value 값을 찾아 number로 바꿔준다.
+  var $input1 = $('#input1').val() * 1;
+  var $input2 = $('#input2').val() * 1;
+  var $answer = $('#answer').val() * 1;
+  
+  // input1과 input2를 더해서 값을 검사해서 맞으면 정답 아니면 오답이라고 alert을 띄우기
+  alert(($input1 + $input2 === $answer) ? '정답' : '오답');
+});
+</script>
+<!-- 문제 2번 종료 -->
+</body>
+</html>
