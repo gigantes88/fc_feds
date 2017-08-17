@@ -1,0 +1,24 @@
+/**********
+*
+* 전영승 responsive page 17.08.04
+*
+**********/
+
+/* reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #58666e; background-color: #f0f3f4; -webkit-font-smoothing: antialiased; -webkit-text-size-adjus: 100%; }
+ul,ol,li,dl,dt,dd { list-style: none; }
+a { text-decoration: none; }
+.clr-fix::after { clear: both; content: ''; display: block; }
+
+/* layout */
+.wrap { 
+  width: 100%;
+}
+
+/* header */
+.header {
+  background: url("./img/Header.png");
+  background-size: cover;
+  width: 100%;
+}
