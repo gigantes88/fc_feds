@@ -4,9 +4,6 @@ for (var i = 0; i < line2; i++) {
 
 }
 
-
-
-
 var pyramid = function (star_num) {
 
   var line = star_num; // 별의 행
