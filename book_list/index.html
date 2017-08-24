@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<br>
+<div class="container">
+  <h2>Book List</h2>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th><input type="checkbox" id="chkAll"></th>
+        <th>#</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody id="list">
+      <!-- 리스트 들어가는 자리 -->
+    </tbody>
+  </table>
+  <div class="btn_group">
+    <button type="button" class="btn btn-outline-danger" id="btnDel">Delete Book</button>
+    <button type="button" class="btn btn-outline-primary" id="btnAdd">Add Book</button>
+    <button type="button" class="btn btn-outline-warning" id="btnCancel">Cancel</button>
+  </div>
+  <br>
+  <div id="addForm" style="display: none;">
+    <div class="input-group">
+      <input type="text" class="form-control" id="inputTitle" placeholder="*Title">
+    </div>
+    <br>
+    <div class="input-group">
+      <input type="text" class="form-control" id="inputAuth" placeholder="Author">
+    </div>
+    <br>
+    <div class="input-group">
+      <input type="text" class="form-control" id="inputPrice" placeholder="Price">
+    </div>
+  </div>
+</div>
+<script src="main.js"></script>
+<script>
+// 1. Delete Book 버튼이 클릭되면 체크된 book 리스트를 삭제
+// 2. 최상위 체크박스를 클릭하면 전체 체크박스 토글(on/off)
+// 3. Add Book 버튼이 클릭되면 .add-form를 표시
+// 4. Add Book 버튼이 클릭되면 Cancel 버튼 표시
+// 5. .add-form이 표시된 상태에서 필수입력 대상인 Title이 입력되었으면 Add Book 버튼이 클릭 시, bookList 객체에 .add-form의 입력값을 추가하고 DOM 갱신
+// 6. .add-form이 표시된 상태에서 필수입력 대상인 Title이 입력되지 않았으면 alert으로 입력되지 않았음을 경고
+// 7. Cancel 버튼이 클릭되면 .add-form과 Cancel 버튼 비표시
+// (*) 모든 선언문의 전역 선언 금지
+</script>
+</body>
+</html>
