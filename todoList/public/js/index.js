@@ -65,8 +65,7 @@
             console.log('item.task: ', item.task);
             insertItem(todoList, item.task, item.id);
           });
-        }
-        else{
+        } else {
           console.error('GET failed');
         }
       }
