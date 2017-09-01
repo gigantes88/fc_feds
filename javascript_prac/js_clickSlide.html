@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slide image</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+<div class=container>
+  <div class="row">
+    <h2>1. 버튼을 클릭하면 이미지를 좌측으로 슬라이드</h2>
+    <h2>2. 3초마다 이미지를 좌측으로 슬라이드</h2>
+    <p>* ES6를 사용하여 작성할 것!</p>
+
+    <img id="img-1" src="http://placehold.it/350x250/abc?text=img1" alt="">
+    <img id="img-2" src="http://placehold.it/350x250/bca?text=img2" alt="">
+    <img id="img-3" src="http://placehold.it/350x250/cba?text=img3" alt="">
+    <div style="margin-top: 10px;">
+      <button class="btn btn-success" id="btn" type="button">image slide</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const clickSlideBtn = document.getElementById('btn');
+  const imgElemArr = [
+    document.getElementById('img-1'),
+    document.getElementById('img-2'),
+    document.getElementById('img-3')
+  ];
+
+  const imgSrcArr = imgElemArr.map(el => el.getAttribute('src'));
+  // es5
+  // var imgSrcArr = imgElemArr.map(function(el) {
+  //   return el.getAttribute('src');
+  // });
+  
+  // setInterval(()=> {
+  //   imgSrcArr.push(shift());
+  //   imgElemArr.map((el, i) => el.setAttribute('src', imgSrcArr[i]));
+  // }, 3000);
+
+  clickSlideBtn.addEventListener('click', () => {
+    imgSrcArr.push(shift());
+    imgElemArr.map((el, i) => el.setAttribute('src', imgSrcArr[i]));
+  });
+})();
+</script>
+</body>
+</html>
