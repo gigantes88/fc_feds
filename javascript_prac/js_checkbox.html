@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script
+src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+crossorigin="anonymous"></script>
+<script>
+// $(function() {
+//   var $chk = $('.chk');
+//   // 체크박스 개수세기
+//   $('#chkBtn').click(function (){
+//     $chkCnt = $('.chk:checked').length;
+//     alert('체크된 수는? : ' + $chkCnt + '개');
+//   });
+
+//   // 체크박스 토글
+//   $('#chkToggle').click(function(){
+//     if ($chk.prop('checked') === true) {
+//       $chk.prop('checked', false);
+//     } else {
+//       $chk.prop('checked', true);
+//     }
+//   });
+// });
+</script>
+<style>
+* {list-style: none; text-decoration: none;}
+.box { border: 1px solid #ddd; border-radius:5px; padding:20px; margin:20px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div style="margin-bottom: 50px;">
+    <ul class="list-group">
+      <li>
+        <span class="input">
+          <input type="checkbox" class="chk1" id="chk1" checked>
+          <label for="chk1">Option 1</label>
+        </span>
+      </li>
+      <li>
+        <span class="input">
+          <input type="checkbox" class="chk1" id="chk2" checked>
+          <label for="chk2">Option 2</label>
+        </span>
+      </li>
+      <li>
+        <span class="input">
+          <input type="checkbox" class="chk1" id="chk3">
+          <label for="chk3">Option 3</label>
+        </span>
+      </li>
+    </ul>
+    <button class="btn btn-outline-secondary" id="chkBtn">Checked된 checkbox의 수</button>
+    <button class="btn btn-outline-primary" id="chkToggle1">toggle</button>
+  </div>
+
+  <div>
+    <h3>약관 동의가 체크되지 않았을 때, alert 약관 동의를 요구</h3>
+    <div class="box">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit porro perspiciatis rerum illum, magni nemo est tempora, iure eum, quae obcaecati. Tempora dolore deserunt, libero nemo est necessitatibus quidem sequi?</p>
+      <input type="checkbox" name="" class="chk2" id="accept1">
+      <label for="accept1">약관동의</label>
+    </div>
+    <div class="box">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit porro perspiciatis rerum illum, magni nemo est tempora, iure eum, quae obcaecati. Tempora dolore deserunt, libero nemo est necessitatibus quidem sequi?</p>
+      <input type="checkbox" name="" class="chk2" id="accept2">
+      <label for="accept2">약관동의</label>
+    </div>
+    <button class="btn btn-outline-secondary" id="chkToggle2">모두 동의</button>
+    <button class="btn btn-outline-primary">확인</button>
+  </div>
+</div>
+<script src="js_checkbox.js"></script>
+</body>
+</html>
