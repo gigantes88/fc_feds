@@ -88,11 +88,10 @@ function addBtn() {
       <td>${inputVal.title}</td>
       <td>${inputVal.author}</td>
       <td>${inputVal.price}</td>
-    </tr>
-    `;
-    input.value = '';
-    document.getElementById('inputAuth').value = '';
-    document.getElementById('inputPrice').value = '';
+    </tr>`;
+    // input.value = '';
+    // document.getElementById('inputAuth').value = '';
+    // document.getElementById('inputPrice').value = '';
     
     // 폼과 취소 버튼을 가린다.
     btnCancel.style.display = 'none';
