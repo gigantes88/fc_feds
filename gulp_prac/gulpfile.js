@@ -2,6 +2,8 @@ const gulp = require('gulp');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const pump = require('pump');
+const imagemin = require('gulp-imagemin');  // image minify
+const cleancss = require('gulp-clean-css');  // css minify
 
 const publicPath = {
   src: './public/src/',
@@ -39,6 +41,29 @@ gulp.task('uglify', ['concat'], () => {
   ]);
 });
 
+// image minify
+gulp.task('imagemin', () => {
+  pump([
+    gulp.src(publicPath.src + '*.jpg'),
+    imagemin(),
+    gulp.dest(publicPath.dest + 'img/')
+  ]);
+});
+
+// css minify
+gulp.task("cleancss", () => {
+  pump([
+    gulp.src(publicPath.src + '*.css'),
+    cleancss(),
+    gulp.dest(publicPath.dest + 'css/')
+  ]);
+});
+
+// watch 기능
+gulp.task("watch", function(){
+  gulp.watch("public/src/*.js", ["uglify"]);
+}); 
+// gulp.task("default", ["uglify", "watch"]);
 
 // gulp만 치면 주르르륵 실행할 수 있도록 default에 등록한다.
-gulp.task('default', ['concat']);
+gulp.task('default', ['cleancss']);
