@@ -1,0 +1,9 @@
+@import "partial/_font";
+@import "partial/_body";
+
+$res-color: #555555;
+$back-color: #DDF7EE;
+.contents {
+  color: $res-color;
+  background: $back-color;
+}

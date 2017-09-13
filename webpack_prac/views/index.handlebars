@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet" href="css/app.bundle.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center">AJAX CRUD using JSON with webpack + babel + sass</h1>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group">
+        <input type="email" id="userid" class="form-control" placeholder="userid" required>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group">
+        <input type="password" id="password" class="form-control" placeholder="password" required>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group">
+        <input type="text" id="firstname" class="form-control" placeholder="first name">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group">
+        <input type="text" id="lastname" class="form-control" placeholder="last name">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <button type="button" id="btnGet" class="btn btn-outline-primary">GET</button>
+      <button type="button" id="btnPost" class="btn btn-outline-secondary">POST</button>
+      <button type="button" id="btnPut" class="btn btn-outline-success">PUT</button>
+      <button type="button" id="btnDel" class="btn btn-outline-danger">DELETE</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <pre class="contents"></pre>
+    </div>
+  </div>
+</div>
+<script src="js/app.bundle.js" defer></script>
+</body>
+</html>
