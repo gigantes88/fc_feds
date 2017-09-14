@@ -1,9 +1,18 @@
 @import "partial/_font";
 @import "partial/_body";
+// @import "partial/_mixin";
+// @import "partial/_sass";
 
 $res-color: #555555;
 $back-color: #DDF7EE;
 .contents {
   color: $res-color;
   background-color: $back-color;
+}
+
+.content {
+  float: right;
+  // &::after {
+  //   @include clearfix;
+  // }
 }
