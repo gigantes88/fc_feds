@@ -7,16 +7,16 @@
       "lastname": "Lee"
     },
     {
-      "userid": "user@somewhere.com",
-      "password": "ps1000",
-      "firstname": "",
-      "lastname": ""
+      "userid": "dd@dd.com",
+      "password": "12345",
+      "firstname": "John",
+      "lastname": "Doe"
     },
     {
-      "userid": "1",
-      "password": "1234",
-      "firstname": "1",
-      "lastname": "1"
+      "userid": "do@hanmail.net",
+      "password": "12345",
+      "firstname": "Foo",
+      "lastname": "Bar"
     }
   ]
 }

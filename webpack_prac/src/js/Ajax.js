@@ -57,7 +57,7 @@ export default class Ajax {
       req.open('DELETE', `${url}/${id}`);
       req.send();
 
-      req.onreadystatechange = function () {
+      req.onreadystatechange = function() {
         if (req.readyState === XMLHttpRequest.DONE) {
           if (req.status === 200) resolve(req.response);
           else reject(req.statusText);
@@ -67,20 +67,26 @@ export default class Ajax {
   }
 }
 
-let btnGet = document.querySelector('#btnGet');
-let btnPost = document.querySelector('#btnPost');
-let btnPut = document.querySelector('#btnPut');
-let btnDel = document.querySelector('#btnDel');
-let contents = document.querySelector('.contents');
+const btnGet = document.querySelector('#btnGet');
+const btnPost = document.querySelector('#btnPost');
+const btnPut = document.querySelector('#btnPut');
+const btnDel = document.querySelector('#btnDel');
+const contents = document.querySelector('.contents');
+const password = document.querySelector('#password').value;
+const firstname = document.querySelector('#firstname').value;
+const lastname = document.querySelector('#lastname').value;
+
+// render
+function render(res) {
+  let users = JSON.stringify(JSON.parse(res), null, 2);
+  contents.innerHTML = users;
+}
 
 // 리스트 가져오기
 btnGet.addEventListener('click', () => {
   const userid = document.querySelector('#userid').value;
   Ajax.get(`/users/${userid}`)
-  .then(res => {
-    let users = JSON.stringify(JSON.parse(res), null, 2);
-    contents.innerHTML = users;
-  })
+  .then(res => { render(res); })
   .catch((e) => console.log(e));
 });
 
@@ -88,62 +94,32 @@ btnGet.addEventListener('click', () => {
 btnPost.addEventListener('click', () => {
   contents.innerHTML = '';
   const userid = document.querySelector('#userid').value;
-
   if (!userid && !password) {
     return alert('userid와 password를 입력하세요');
   }
-  const password = document.querySelector('#password').value;
-  const firstname = document.querySelector('#firstname').value;
-  const lastname = document.querySelector('#lastname').value;
-
-
   Ajax.post('/users', { userid, password, firstname, lastname })
-    .then( res => {
-      let users = JSON.stringify(JSON.parse(res), null, 2);
-      contents.innerHTML = users;
-    });
+  .then( res => { render(res); });
 });
 
 // 수정하기
 btnPut.addEventListener('click', () => {
   contents.innerHTML = '';
-  
   const userid = document.querySelector('#userid').value;
-  const password = document.querySelector('#password').value;
-  const firstname = document.querySelector('#firstname').value;
-  const lastname = document.querySelector('#lastname').value;
-
   const data = {
     "userid": userid,
     "password": password,
     "firstname": firstname,
     "lastname": lastname
   };
-
-  Ajax.put('/users', `${userid}`, data )
-    .then( res => {
-      contents.innerHTML = res;
-    });
+  Ajax.put('/users', `${userid}`, data)
+  .then( res => { render(res); });
 });
 
 // 삭제하기
-btnPut.addEventListener('click', () => {
+btnDel.addEventListener('click', () => {
   contents.innerHTML = '';
-  
   const userid = document.querySelector('#userid').value;
-  const password = document.querySelector('#password').value;
-  const firstname = document.querySelector('#firstname').value;
-  const lastname = document.querySelector('#lastname').value;
 
-  const data = {
-    "userid": userid,
-    "password": password,
-    "firstname": firstname,
-    "lastname": lastname
-  };
-
-  Ajax.put('/users', `${userid}`, data )
-    .then( res => {
-      contents.innerHTML = res;
-    });
+  Ajax.delete('/users', `${userid}`)
+  .then( res => { render(res); });
 });

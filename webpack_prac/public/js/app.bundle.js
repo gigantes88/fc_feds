@@ -9127,13 +9127,21 @@ var btnPost = document.querySelector('#btnPost');
 var btnPut = document.querySelector('#btnPut');
 var btnDel = document.querySelector('#btnDel');
 var contents = document.querySelector('.contents');
+var password = document.querySelector('#password').value;
+var firstname = document.querySelector('#firstname').value;
+var lastname = document.querySelector('#lastname').value;
+
+// render
+function render(res) {
+  var users = JSON.stringify(JSON.parse(res), null, 2);
+  contents.innerHTML = users;
+}
 
 // 리스트 가져오기
 btnGet.addEventListener('click', function () {
   var userid = document.querySelector('#userid').value;
   Ajax.get('/users/' + userid).then(function (res) {
-    var users = JSON.stringify(JSON.parse(res), null, 2);
-    contents.innerHTML = users;
+    render(res);
   }).catch(function (e) {
     return console.log(e);
   });
@@ -9143,59 +9151,36 @@ btnGet.addEventListener('click', function () {
 btnPost.addEventListener('click', function () {
   contents.innerHTML = '';
   var userid = document.querySelector('#userid').value;
-
   if (!userid && !password) {
     return alert('userid와 password를 입력하세요');
   }
-  var password = document.querySelector('#password').value;
-  var firstname = document.querySelector('#firstname').value;
-  var lastname = document.querySelector('#lastname').value;
-
   Ajax.post('/users', { userid: userid, password: password, firstname: firstname, lastname: lastname }).then(function (res) {
-    var users = JSON.stringify(JSON.parse(res), null, 2);
-    contents.innerHTML = users;
+    render(res);
   });
 });
 
 // 수정하기
 btnPut.addEventListener('click', function () {
   contents.innerHTML = '';
-
   var userid = document.querySelector('#userid').value;
-  var password = document.querySelector('#password').value;
-  var firstname = document.querySelector('#firstname').value;
-  var lastname = document.querySelector('#lastname').value;
-
   var data = {
     "userid": userid,
     "password": password,
     "firstname": firstname,
     "lastname": lastname
   };
-
   Ajax.put('/users', '' + userid, data).then(function (res) {
-    contents.innerHTML = res;
+    render(res);
   });
 });
 
 // 삭제하기
-btnPut.addEventListener('click', function () {
+btnDel.addEventListener('click', function () {
   contents.innerHTML = '';
-
   var userid = document.querySelector('#userid').value;
-  var password = document.querySelector('#password').value;
-  var firstname = document.querySelector('#firstname').value;
-  var lastname = document.querySelector('#lastname').value;
 
-  var data = {
-    "userid": userid,
-    "password": password,
-    "firstname": firstname,
-    "lastname": lastname
-  };
-
-  Ajax.put('/users', '' + userid, data).then(function (res) {
-    contents.innerHTML = res;
+  Ajax.delete('/users', '' + userid).then(function (res) {
+    render(res);
   });
 });
 
