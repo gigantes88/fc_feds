@@ -1,5 +1,4 @@
-# fc_feds
-FastCampus Front-End Development School 5th
+# FastCampus Front-End Development School 5th
 
 ## HTML5
 ## CSS3
